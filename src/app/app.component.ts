@@ -12,8 +12,8 @@ export class AppComponent {
   ok = false;
 
   changePosition(): void {
-    let l = Math.floor(Math.random() * window.innerWidth) + 150;
-    let t = Math.floor(Math.random() * window.innerHeight) + 35;
+    let l = Math.floor(Math.random() * window.innerWidth) + 200;
+    let t = Math.floor(Math.random() * window.innerHeight) + 50;
     l = l > window.innerWidth - 150 ? window.innerWidth - 200 : l;
     t = t > window.innerHeight - 35 ? window.innerHeight - 200 : t;
     this.left = l + 1 + 'px';
