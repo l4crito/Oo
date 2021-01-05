@@ -1,10 +1,11 @@
-<div class="container center">
-  Te puedes quedar conmigo un rato mas por favor?
+<div class="container center" *ngIf="currentMesage?.message" @apearAnimation>
+  {{currentMesage?.message}}
 </div>
-<div class="no btn" [ngStyle]="{left:left,top:top}" (mouseover)="changePosition()" (click)="changePosition()">No
+<div class="no btn" [ngStyle]="{left:left,top:top}" (mouseover)="changePosition()" (click)="deny()">No
 </div>
-<div class="yes btn" (click)="ok=true">Si</div>
+<div class="yes btn" (click)="acept()">Si</div>
 
-<div class="ok center" [ngClass]="{'show': ok}" (click)="ok=false">
-  Gracias :3
+<div class="ok center" [ngClass]="{'show': currentMesage?.final}">
+  {{currentMesage?.message}}
+  <div class="capture">Enviar captura a Christian.</div>
 </div>

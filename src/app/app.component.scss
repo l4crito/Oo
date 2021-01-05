@@ -31,7 +31,6 @@
     background-color: purple;
     top: calc(50vh - 60px);
     left: calc(50% - 75px);
-    
 }
 .no {
     bottom: 3px;
@@ -49,7 +48,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.932);
+    background-color: rgba(0, 0, 0, 0.986);
     color: white;
     font-size: 2rem;
     font-weight: 600;
@@ -58,15 +57,29 @@
     height: 100%;
     cursor: pointer;
     transform: translateY(-100%);
+    padding: 5px;
 }
 .show {
     transform: translateY(0);
 }
 
+.capture {
+    position: fixed;
+    font-size: 0.7rem;
+    bottom: 20px;
+    right: 5px;
+    z-index: 200;
+    padding: 10px;
+    background-color: transparent;
+    color: tomato;
+}
 @media (max-width: 600px) {
     .container {
         font-size: 1.4rem;
-        margin-top: 1rem;
+        padding-top: 1rem;
         height: fit-content;
+    }
+    .ok {
+        font-size: 1.3rem;
     }
 }
