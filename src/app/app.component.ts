@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { topToBottom } from './animations/animations';
+import { topToBottom, ok } from './animations/animations';
 import { MessageModel, messages } from './models/messages';
 
 @Component({
   selector: 'app-root',
-  animations: [topToBottom],
+  animations: [topToBottom, ok],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

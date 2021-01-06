@@ -22,7 +22,7 @@ export const messages: MessageModel[] = [
     },
     {
         id: 2,
-        message: 'Te espero en el Caracol a las 10:00 am  :3 ',
+        message: ':3, Te espero en el Caracol a las 10:00 am ',
         final: true,
     },
     {

@@ -61,6 +61,17 @@ export const topToBottom = trigger('topToBottom', [
     ]),
 
 ]);
+export const ok = trigger('ok', [
+    transition(':enter', [
+        style({ transform: 'translateY(-100%)' }),
+        animate('300ms  0s ease-in-out', style({ transform: 'translateY(0)' })),
+    ]),
+    transition(':leave', [
+        style({ transform: 'translateY(0)' }),
+        animate('300ms  0s ease-in-out', style({ transform: 'translateY(-100%)' })),
+    ]),
+
+]);
 export const apearAnimation = trigger('apearAnimation', [
     transition(':enter', [
         style({ opacity: 0 }),

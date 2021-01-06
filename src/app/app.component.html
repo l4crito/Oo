@@ -5,7 +5,7 @@
 </div>
 <div class="yes btn ns" (click)="acept()">Si</div>
 
-<div class="ok center ns" [ngClass]="{'show': currentMesage?.final}">
+<div class="ok center ns" *ngIf="currentMesage?.final" @ok>
   {{currentMesage?.message}}
   <div class="capture">Enviar captura a Christian.</div>
 </div>
