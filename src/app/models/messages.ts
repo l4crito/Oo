@@ -39,7 +39,7 @@ export const messages: MessageModel[] = [
     },
     {
         id: 5,
-        message: 'Espero que tengas un bonito día mañana.',
+        message: 'Espero que tengas un bonito fin de semana.',
         final: true
     },
     {
