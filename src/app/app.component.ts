@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
+import { topToBottom } from './animations/animations';
 import { MessageModel, messages } from './models/messages';
-import { topToBottom, apearAnimation } from './animations/animations';
 
 @Component({
   selector: 'app-root',
-  animations: [apearAnimation],
+  animations: [topToBottom],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -12,7 +13,7 @@ export class AppComponent implements OnInit {
   title = 'Oo';
   left = 'calc(50% - 75px)';
   top = '50vh';
-  currentMesage: MessageModel;
+  currentMesage: MessageModel = {};
   ngOnInit(): void {
     this.retry();
   }
@@ -31,21 +32,14 @@ export class AppComponent implements OnInit {
   }
 
   acept(): void {
-    this.currentMesage.message = null;
-    setTimeout(() => {
-      this.currentMesage = messages.find(message => message.id === this.currentMesage.ok);
-      this.initCancel();
-    }, 300);
+    this.setMessage(this.currentMesage.ok);
   }
   deny(): void {
     this.changePosition();
     if (this.currentMesage?.blink) {
       return;
     }
-    setTimeout(() => {
-      this.currentMesage = messages.find(message => message.id === this.currentMesage.cancel);
-      this.initCancel();
-    }, 300);
+    this.setMessage(this.currentMesage.cancel);
   }
 
   initCancel(): void {
@@ -54,8 +48,20 @@ export class AppComponent implements OnInit {
   }
 
   retry(): void {
-    this.initCancel();
-    this.currentMesage = messages.find(message => message.id === 0);
+    if (this.currentMesage?.final) {
+      this.currentMesage = JSON.parse(JSON.stringify(messages.find(message => message.id === 0)));
+      this.initCancel();
+    } else {
+      this.setMessage(0, 300);
+    }
+  }
+
+  setMessage(id: number, timeout = 300): void {
+    this.currentMesage.message = null;
+    setTimeout(() => {
+      this.currentMesage = JSON.parse(JSON.stringify(messages.find(message => message.id === id)));
+      this.initCancel();
+    }, timeout);
 
   }
 

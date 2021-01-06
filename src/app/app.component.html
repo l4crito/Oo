@@ -1,11 +1,13 @@
-<div class="container center" *ngIf="currentMesage?.message" @apearAnimation>
+<div class="container center" *ngIf="currentMesage?.message" @topToBottom>
   {{currentMesage?.message}}
 </div>
-<div class="no btn" [ngStyle]="{left:left,top:top}" (mouseover)="changePosition()" (click)="deny()">No
+<div class="no btn ns" [ngStyle]="{left:left,top:top}" (mouseover)="changePosition()" (click)="deny()">No
 </div>
-<div class="yes btn" (click)="acept()">Si</div>
+<div class="yes btn ns" (click)="acept()">Si</div>
 
-<div class="ok center" [ngClass]="{'show': currentMesage?.final}">
+<div class="ok center ns" [ngClass]="{'show': currentMesage?.final}">
   {{currentMesage?.message}}
   <div class="capture">Enviar captura a Christian.</div>
 </div>
+
+<i class="material-icons retry ns" (click)="retry()">replay</i>
