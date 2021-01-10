@@ -12,7 +12,10 @@ jobs:
           node-version: '12.x'
       - run: npm i
       - run: npm run ng build  --prod
-      - run: ls
+      - run: rm dist/pame/index.html
+      - run: mv pame.htm dist/pame/index.html
+      - run: cat dist/pame/index.html
+      
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
