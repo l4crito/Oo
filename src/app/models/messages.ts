@@ -10,7 +10,7 @@ export interface MessageModel {
 export const messages: MessageModel[] = [
     {
         id: 0,
-        message: 'Pame, estás a full el sábado ?',
+        message: 'Pameeee, estás a full el sábado ?',
         cancel: 4,
         ok: 3,
     },
