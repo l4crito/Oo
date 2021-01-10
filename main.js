@@ -378,7 +378,7 @@ __webpack_require__.r(__webpack_exports__);
 const messages = [
     {
         id: 0,
-        message: 'Pame, estás a full el sábado ?',
+        message: 'Pameeee, estás a full el sábado ?',
         cancel: 4,
         ok: 3,
     },
