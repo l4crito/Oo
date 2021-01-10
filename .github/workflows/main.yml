@@ -13,7 +13,7 @@ jobs:
       - run: npm i
       - run: npm run ng build  --prod
       - run: rm dist/pame/index.html
-      - run: mv pame.htm dist/pame/index.html
+      - run: mv pame.html dist/pame/index.html
       - run: cat dist/pame/index.html
       
 
