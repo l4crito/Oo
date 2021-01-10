@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: '12.x'
       - run: npm i
-      - run: npm run ng build  --prod  --base-href https://l4crito.github.io/Oo/
+      - run: 'npm run ng build  --prod  --base-href https://l4crito.github.io/Oo/'
       - run: ls
 
       - name: Deploy 🚀
