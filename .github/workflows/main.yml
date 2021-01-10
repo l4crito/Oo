@@ -17,10 +17,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-        run: |
-          npm i
-          npm run ng build  --prod  --base-href https://l4crito.github.io/Oo/
-          ls
+      - run: npm i
+      - run: npm run ng build  --prod  --base-href https://l4crito.github.io/Oo/
+      - run: ls
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
