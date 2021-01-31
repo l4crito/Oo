@@ -1,13 +1,20 @@
 <div class="container center" *ngIf="currentMesage?.message" @topToBottom>
   {{currentMesage?.message}}
 </div>
-<div class="no btn ns" [ngStyle]="{left:left,top:top}" (mouseover)="changePosition()" (click)="deny()">No
+<div class="no btn ns" [ngStyle]="{left:cancel.left,top:cancel.top}" (mouseover)="changePosition()" (click)="deny()">
+  No
 </div>
-<div class="yes btn ns" (click)="acept()">Si</div>
+<div class="maybe btn ns" [ngStyle]="{left:maybe.left,top:maybe.top}" (mouseover)="changeMaybePosition()"
+  *ngIf="currentMesage?.maybe" @apearAnimation (click)="changeMaybePosition()">Tal vez
+</div>
+<div class="yes btn ns" [ngStyle]="{left:ok.left,top:ok.top}" (click)="acept()">Si</div>
 
 <div class="ok center ns" *ngIf="currentMesage?.final" @ok>
   {{currentMesage?.message}}
-  <div class="capture">Enviar captura a Christian.</div>
+  <!-- <div class="capture">Enviar captura a Christian.</div> -->
 </div>
+
+
+  <div class="playing" *ngIf="playing>6" @apearAnimation>Estas jugando ??? o en verdad no quieres :c</div>
 
 <i class="material-icons retry ns" (click)="retry()">replay</i>

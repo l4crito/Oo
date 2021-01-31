@@ -4,15 +4,16 @@
     color: rgb(68, 67, 67);
     font-size: 2rem;
     transition: 300ms ease-in-out;
+    text-align: center;
 }
 
 .btn {
     box-sizing: border-box;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    line-height: 40px;
-    height: 40px;
-    border-radius: 5px;
-    width: 150px;
+    line-height: 60px;
+    height: 60px;
+    min-width:  60px;
+    border-radius: 50%;    
     text-align: center;
     font-size: 1.3rem;
     font-weight: 600;
@@ -29,9 +30,14 @@
     }
 }
 .yes {
-    background-color: purple;
-    top: calc(50vh - 60px);
-    left: calc(50% - 75px);
+    background-color: rgba(120, 43, 192, 0.884);
+}
+.maybe {
+    line-height: 60px;
+    height: 60px;
+    border-radius: 60px;
+    width: 200px;
+    background-color: #4285F4;
 }
 .no {
     bottom: 3px;
@@ -68,6 +74,21 @@
     padding: 10px;
     background-color: transparent;
     color: tomato;
+}
+.playing {
+    position: fixed;
+    font-size: 1.5rem;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    padding: 10px;
+    background-color: transparent;
+    background-color: #4285F4;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 800;
+    padding: 1rem 2rem;
+    border-top-right-radius: 20px;
 }
 .retry {
     transition: 300ms ease-in-out;
