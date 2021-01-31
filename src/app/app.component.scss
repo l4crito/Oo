@@ -77,18 +77,19 @@
 }
 .playing {
     position: fixed;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     bottom: 0;
     left: 0;
     z-index: 0;
-    padding: 10px;
     background-color: transparent;
-    background-color: #4285F4;
+    background-color: tomato;
     color: white;
     letter-spacing: 1px;
     font-weight: 800;
-    padding: 1rem 2rem;
-    border-top-right-radius: 20px;
+    padding: 0 2rem;
+    line-height: 50px;
+    border-radius: 50px;
+    margin: 2rem;
 }
 .retry {
     transition: 300ms ease-in-out;

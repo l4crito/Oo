@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { topToBottom, ok, apearAnimation } from './animations/animations';
-import { MessageModel, messages } from './models/messages';
+import { topToBottom, ok, apearAnimation, bottomToTop } from './animations/animations';
+import { warns, MessageModel, messages } from './models/messages';
 
 @Component({
   selector: 'app-root',
-  animations: [topToBottom, ok, apearAnimation],
+  animations: [topToBottom, ok, apearAnimation, bottomToTop],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -26,16 +26,18 @@ export class AppComponent implements OnInit {
   }
   currentMesage: MessageModel = {};
   playing = 0;
+  warning = '';
+  warningIndex = -1;
   ngOnInit(): void {
     this.retry();
   }
 
   changePosition(): void {
-    
+
     if (!this.currentMesage?.blink) {
       return;
     }
-    this.playing++;
+    this.setWarning();
     let l = Math.floor(Math.random() * window.innerWidth) + 200;
     let t = Math.floor(Math.random() * window.innerHeight) + 50;
     l = l > window.innerWidth - 150 ? window.innerWidth - 200 : l;
@@ -44,7 +46,7 @@ export class AppComponent implements OnInit {
     this.cancel.top = t + 1 + 'px';
   }
   changeMaybePosition(): void {
-    this.playing++;
+    this.setWarning();
     let l = Math.floor(Math.random() * window.innerWidth) + 200;
     let t = Math.floor(Math.random() * window.innerHeight) + 50;
     l = l > window.innerWidth - 150 ? window.innerWidth - 200 : l;
@@ -54,7 +56,7 @@ export class AppComponent implements OnInit {
   }
 
   acept(): void {
-    this.playing = 0;
+    this.initWarning();
     this.setMessage(this.currentMesage.ok);
   }
   deny(): void {
@@ -75,6 +77,7 @@ export class AppComponent implements OnInit {
   }
 
   retry(): void {
+    this.initWarning();
     if (this.currentMesage?.final) {
       this.currentMesage = JSON.parse(JSON.stringify(messages.find(message => message.id === 0)));
       this.initCancel();
@@ -89,7 +92,26 @@ export class AppComponent implements OnInit {
       this.currentMesage = JSON.parse(JSON.stringify(messages.find(message => message.id === id)));
       this.initCancel();
     }, timeout);
+  }
 
+  setWarning() {
+    this.playing++;
+    if (this.playing % 3 === 0) {
+      this.warningIndex++;
+      if (this.warningIndex > (warns.length - 1)) {
+        this.warningIndex = (warns.length - 1);
+      }
+      this.warning = warns[this.warningIndex];
+      setTimeout(() => {
+        this.warning = '';
+      }, 3000);
+    }
+  }
+
+  initWarning() {
+    this.playing = 0;
+    this.warningIndex = -1
+    this.warning = '';
   }
 
 }

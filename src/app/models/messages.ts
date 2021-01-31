@@ -32,3 +32,15 @@ export const messages: MessageModel[] = [
         final: true,
     },
 ];
+
+
+export const warns: string[] = [
+    'estas jugando conmigo??',
+    'hieres mis sentimientos',
+    'omg par favar',
+    'ya paraaa :C',
+    'oe oe oe ctm yaaaa',
+    'ya wey yaaaa',
+    'ya dale siii y te doy una pizza :3',
+    'ya dale siii!! ',
+];

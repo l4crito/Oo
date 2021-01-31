@@ -15,6 +15,6 @@
 </div>
 
 
-  <div class="playing" *ngIf="playing>6" @apearAnimation>Estas jugando ??? o en verdad no quieres :c</div>
+<div class="playing" *ngIf="warning" @bottomToTop>{{warning}}</div>
 
 <i class="material-icons retry ns" (click)="retry()">replay</i>
