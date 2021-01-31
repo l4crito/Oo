@@ -11,10 +11,8 @@ jobs:
         with:
           node-version: '12.x'
       - run: npm i
-      - run: npm run ng build  --prod
+      - run: npm run ng build -- --prod --base-href=/Oo/
       - run: rm dist/pame/index.html
-      - run: mv pame.html dist/pame/index.html
-      - run: cat dist/pame/index.html
       
 
       - name: Deploy 🚀
