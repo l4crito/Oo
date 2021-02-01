@@ -7,7 +7,7 @@
 <div class="maybe btn ns" [ngStyle]="{left:maybe.left,top:maybe.top}" (mouseover)="changeMaybePosition()"
   *ngIf="currentMesage?.maybe" @apearAnimation (click)="changeMaybePosition()">Tal vez
 </div>
-<div class="yes btn ns" [ngStyle]="{left:ok.left,top:ok.top}" (click)="acept()">Si</div>
+<div class="yes btn ns" [ngStyle]="{left:ok.left,top:ok.top}" (click)="acept()" [ngClass]="{'heart':centered}">Si</div>
 
 <div class="ok center ns" *ngIf="currentMesage?.final" @ok>
   {{currentMesage?.message}}

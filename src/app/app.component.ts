@@ -10,7 +10,7 @@ import { warns, MessageModel, messages } from './models/messages';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Oo';
+  title = 'Pamee';
 
   ok = {
     top: '40vh',
@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
   playing = 0;
   warning = '';
   warningIndex = -1;
+  centered = false;
   ngOnInit(): void {
     this.retry();
   }
@@ -37,7 +38,7 @@ export class AppComponent implements OnInit {
     if (!this.currentMesage?.blink) {
       return;
     }
-    this.setWarning();
+    this.checkWarnings();
     let l = Math.floor(Math.random() * window.innerWidth) + 200;
     let t = Math.floor(Math.random() * window.innerHeight) + 50;
     l = l > window.innerWidth - 150 ? window.innerWidth - 200 : l;
@@ -46,7 +47,7 @@ export class AppComponent implements OnInit {
     this.cancel.top = t + 1 + 'px';
   }
   changeMaybePosition(): void {
-    this.setWarning();
+    this.checkWarnings();
     let l = Math.floor(Math.random() * window.innerWidth) + 200;
     let t = Math.floor(Math.random() * window.innerHeight) + 50;
     l = l > window.innerWidth - 150 ? window.innerWidth - 200 : l;
@@ -75,6 +76,10 @@ export class AppComponent implements OnInit {
     this.maybe.left = 'calc(50vw - 100px)';
     this.maybe.top = 'calc(40vh + 100px)';
   }
+  centerOk(): void {
+    this.ok.left = 'calc(50vw - 30px)';
+    this.centered = true;
+  }
 
   retry(): void {
     this.initWarning();
@@ -94,13 +99,11 @@ export class AppComponent implements OnInit {
     }, timeout);
   }
 
-  setWarning() {
+  checkWarnings() {
     this.playing++;
-    if (this.playing % 3 === 0) {
-      this.warningIndex++;
-      if (this.warningIndex > (warns.length - 1)) {
-        this.warningIndex = (warns.length - 1);
-      }
+    if (this.playing % 3 === 0 && this.currentMesage?.maybe) {
+      this.centerOk();
+      this.warningIndex = Math.floor(Math.random() * warns.length);
       this.warning = warns[this.warningIndex];
       setTimeout(() => {
         this.warning = '';
@@ -112,6 +115,7 @@ export class AppComponent implements OnInit {
     this.playing = 0;
     this.warningIndex = -1
     this.warning = '';
+    this.centered = false;
   }
 
 }
