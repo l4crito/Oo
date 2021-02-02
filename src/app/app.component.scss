@@ -99,8 +99,10 @@
     font-weight: 800;
     padding: 0 4rem;
     line-height: 80px;
-    border-radius: 30px;
+    border-radius: 20px;
     margin: 2rem;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
 }
 .retry {
     transition: 300ms ease-in-out;
