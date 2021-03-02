@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
   warning = '';
   warningIndex = -1;
   centered = false;
+  done = [];
   ngOnInit(): void {
     this.retry();
   }
@@ -103,8 +104,7 @@ export class AppComponent implements OnInit {
     this.playing++;
     if (this.playing % 3 === 0 && this.currentMesage?.maybe) {
       this.centerOk();
-      this.warningIndex = Math.floor(Math.random() * warns.length);
-      this.warning = warns[this.warningIndex];
+      this.warning = warns[this.getIndex()];
       this.clearTimer();
       this.timer = setTimeout(() => {
         this.warning = '';
@@ -124,6 +124,19 @@ export class AppComponent implements OnInit {
       clearTimeout(this.timer);
       this.timer = null;
     }
+  }
+
+  getIndex(): number {
+    if (this.done.length === warns.length) {
+      this.done = [];
+    }
+    const index = Math.floor(Math.random() * warns.length);
+    if (this.done.find(i => i === index)) {
+      return this.getIndex();
+    }
+    this.done.push(index);
+    console.log(index);
+    return index;
   }
 
 }
