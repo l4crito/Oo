@@ -10,7 +10,7 @@ import { warns, MessageModel, messages } from './models/messages';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Pamee';
+  title = 'Liss';
 
   ok = {
     top: '40vh',
@@ -98,14 +98,15 @@ export class AppComponent implements OnInit {
       this.initCancel();
     }, timeout);
   }
-
+  timer = null;
   checkWarnings() {
     this.playing++;
     if (this.playing % 3 === 0 && this.currentMesage?.maybe) {
       this.centerOk();
       this.warningIndex = Math.floor(Math.random() * warns.length);
       this.warning = warns[this.warningIndex];
-      setTimeout(() => {
+      this.clearTimer();
+      this.timer = setTimeout(() => {
         this.warning = '';
       }, 3000);
     }
@@ -116,6 +117,13 @@ export class AppComponent implements OnInit {
     this.warningIndex = -1
     this.warning = '';
     this.centered = false;
+  }
+
+  clearTimer() {
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = null;
+    }
   }
 
 }
