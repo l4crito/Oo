@@ -42,7 +42,7 @@ export const warns: string[] = [
     'ya we yaaaa',
     'oe oe oe csm yaaaa',
     'Si le das que si prometo dejarme crecer el rabo XD',
-    'dale a SI y te doy una pizza :3',
+    'dale a SI y te doy una pizza :3 no como esa cosa que comimos',
     'ya dale SI!! ',
     'esto me has hecho :c !! ',
     'SI!! es el que tiene color morado ',
