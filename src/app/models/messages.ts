@@ -2,10 +2,10 @@ export interface MessageModel {
     message?: string;
     id?: number;
     ok?: number;
+    maybe?: number;
     cancel?: number;
     final?: boolean;
     blink?: boolean;
-    maybe?: boolean;
 }
 
 export const messages: MessageModel[] = [
@@ -18,11 +18,11 @@ export const messages: MessageModel[] = [
     },
     {
         id: 1,
-        message: 'Quieres ser mi novia , pero en verdad?',
+        message: 'Quieres ser mi novia?',
         ok: 2,
         cancel: 0,
         blink: true,
-        maybe: true,
+        maybe: 1,
     },
     {
         id: 2,
@@ -37,7 +37,7 @@ export const messages: MessageModel[] = [
 export const warns: string[] = [
     'estas jugando conmigo??',
     'hieres mis sentimientos :.c',
-    'omg par chinita favar!!',
+    'omg chinita favar!!',
     'paraaa!! :C',
     'ya we yaaaa',
     'oe oe oe csm yaaaa',
