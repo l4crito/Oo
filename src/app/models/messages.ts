@@ -11,7 +11,7 @@ export interface MessageModel {
 export const messages: MessageModel[] = [
     {
         id: 0,
-        message: 'Amoyoo, puedo hacerte una question ?',
+        message: 'Roro, puedo hacerte una question ?',
         cancel: 0,
         ok: 1,
         blink: true
@@ -26,7 +26,7 @@ export const messages: MessageModel[] = [
     },
     {
         id: 2,
-        message: ':o em em no creí llegar tan lejos , sera muy bonito  :3 !!',
+        message: ':o, Robatumbas!!!! jajaja, em em no creí llegar tan lejos , sera muy bonito  :3 !!',
         ok: 2,
         blink: true,
         final: true,
@@ -37,18 +37,16 @@ export const messages: MessageModel[] = [
 export const warns: string[] = [
     'estas jugando conmigo??',
     'hieres mis sentimientos :.c',
-    'omg par favar!!',
+    'omg par chinita favar!!',
     'paraaa!! :C',
     'ya we yaaaa',
     'oe oe oe csm yaaaa',
-    'Si le das que si prometo dejarme crecer el rabo XD',
-    'dale a SI y te doy una pizza :3 no como esa cosa que comimos',
     'ya dale SI!! ',
     'esto me has hecho :c !! ',
     'SI!! es el que tiene color morado ',
     'por favor ',
-    'Lizz pls pls ',
-    'Lix Rivera puedes darle al boton que es',
+    'Roro pls pls ',
+    'Monchito puedes darle al boton que es',
     'Tal vez en inglés, wanna be my girlfriend?? ',
     'Al morado plis ',
     'Ese no es ',
