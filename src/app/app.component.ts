@@ -10,7 +10,7 @@ import { warns, MessageModel, messages } from './models/messages';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Roro';
+  title = 'dorito';
 
   ok = {
     top: '40vh',
